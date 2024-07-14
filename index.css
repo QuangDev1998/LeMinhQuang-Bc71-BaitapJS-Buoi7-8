@@ -1,0 +1,10 @@
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+.result-box {
+    background-color: #e9f7ef;
+    border-radius: 5px;
+    padding: 20px;
+}
