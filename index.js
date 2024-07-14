@@ -175,21 +175,55 @@ function ex8() {
     document.getElementById("Result8").innerHTML = soHang;
 }
 // ********************
+// function themSo() {
+//     if (listNumber.length === 0) {
+//         document.getElementById("inputNumber").innerHTML = "Vui lòng nhập số vào mảng";
+//         return;
+//     }
+// }
 function ex9() {
     if (listNumber.length === 0) {
-        document.getElementById("inputNumber").innerHTML = "Vui lòng nhập số vào mảng";
+        document.getElementById("Result9").innerHTML = "Vui lòng nhập số vào mảng";
         return;
     }
-    var countPrime = 0;
-    var soThuc = `Các Số Nguyên Trong Mảng : `;
+    var countInteger = 0;
+    var soNguyen = `Các Số Nguyên Trong Mảng: `;
 
     for (var i = 0; i < listNumber.length; i++) {
-        if (listNumber[i] > 0) {
-            if (soNguyenTo(listNumber[i]) === true) {
-                countPrime++;
-            }
+        if (Number.isInteger(listNumber[i])) {
+            countInteger++;
         }
     }
-    soThuc += countPrime;
-    document.getElementById("Result9").innerHTML = soThuc;
+    soNguyen += countInteger;
+    document.getElementById("Result9").innerHTML = soNguyen;
+}
+
+// *************
+function ex10() {
+    if (listNumber.length === 0) {
+        document.getElementById("Result10").innerHTML = "Vui lòng nhập số vào mảng";
+        return;
+    }
+
+    var countPos = 0;
+    var countNev = 0;
+
+    for (var i = 0; i < listNumber.length; i++) {
+        if (listNumber[i] >= 0) {
+            countPos++;
+        } else {
+            countNev++;
+        }
+    }
+
+    var soSanh = "";
+    if (countPos > countNev) {
+        soSanh = "Số dương nhiều hơn";
+    } else if (countNev > countPos) {
+        soSanh = "Số âm nhiều hơn";
+    } else {
+        soSanh = "Dương và âm bằng nhau";
+    }
+
+    document.getElementById("Result10").innerHTML = soSanh;
 }
